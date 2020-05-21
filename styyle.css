@@ -1,0 +1,28 @@
+form {
+    background-color: teal;
+    padding-top: 10px;
+    width: 40%; 
+    text-align: center;
+    /* position: absolute;
+    margin: auto;
+    width: 80 em;
+    vertical-align: middle; */
+    left: 50%;
+    top: 50%;
+    margin-left: -25%;
+    position: absolute;
+    margin-top: -25%;
+}
+
+body {
+    
+    background-color: thistle;
+}
+
+.radio {
+    color: burlywood;
+}
+label {
+    color:burlywood;
+    size: 40;
+}

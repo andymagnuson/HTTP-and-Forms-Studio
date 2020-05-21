@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Search Engine</title>
+	<link href="styyle.css" rel="stylesheet" type="text/css" />
 	<script>
 
 function setSearchEngine() {
@@ -18,15 +19,19 @@ window.addEventListener("change", function(){
   	let x = document.querySelector('input[name=engine]:checked').value
     document.getElementById('searchForm').action = x +'?q' +q;
 })
-window.addEventListener("submit", setSearchEngine());
+form.addEventListener("submit", setSearchEngine());
+document.getElementById('q').value.addEventListener('change', function(){
+	window.alert('working')
+})
+
     
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm" action= "asdf" method="get">
-		<label>search<input type='text' name ='q' require>
+	<form id="searchForm" action= "asdf" method="post">
+		<label style="font-size:20px;">Search <br><input type='text' name ='q' id = 'q' require>
 		</label>
 	<br>
 		<label class="radio" name='engine'>Select your Engine: <br>
@@ -35,6 +40,7 @@ window.addEventListener("submit", setSearchEngine());
 			<input type="radio" name="engine" value="https://www.bing.com/search/"> Bing
 			<input type="radio" name="engine" value="https://www.ask.com/web/"> Ask
 		  </label>
+	<br>
 	<br>
 		  <button value = "Go!">submit</button>
     <!-- TODO: add form elements -->
