@@ -2,17 +2,41 @@
 
 <head>
 	<meta charset="utf-8">
+	<title>Search Engine</title>
 	<script>
+
+function setSearchEngine() {
+	let q= document.querySelector('input[name=q]').value
+  	let x = document.querySelector('input[name=engine]:checked').value
+    document.getElementById('searchForm').action = x +'/?q' +q;
+
+   
+}
 		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
+window.addEventListener("change", function(){
+	let q= document.querySelector('input[name=q]').value
+  	let x = document.querySelector('input[name=engine]:checked').value
+    document.getElementById('searchForm').action = x +'?q' +q;
+})
+window.addEventListener("submit", setSearchEngine());
+    
 	</script>
 </head>
 
 <body>
 
-	<form id="searchForm">
+	<form id="searchForm" action= "asdf" method="get">
+		<label>search<input type='text' name ='q' require>
+		</label>
+	<br>
+		<label class="radio" name='engine'>Select your Engine: <br>
+			<input type="radio" name= 'engine' value= "https://google.com/search" required> Google
+			<input type="radio" name="engine" value="https://duckduckgo.com/"> DuckDuckGo
+			<input type="radio" name="engine" value="https://www.bing.com/search/"> Bing
+			<input type="radio" name="engine" value="https://www.ask.com/web/"> Ask
+		  </label>
+	<br>
+		  <button value = "Go!">submit</button>
     <!-- TODO: add form elements -->
 	</form>
 
